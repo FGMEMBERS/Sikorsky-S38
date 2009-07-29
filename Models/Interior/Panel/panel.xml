@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.314 </y-m>
+      <z-m>  0.189 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.474 </y-m>
+      <z-m>  0.131 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/rpm/rpmL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.045 </y-m>
+      <z-m>  0.081 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/rpm/rpmR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m>  0.045 </y-m>
+      <z-m>  0.081 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.605 </y-m>
+      <z-m>  0.143 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> -0.514 </x-m>
+      <y-m> -0.712 </y-m>
+      <z-m>  0.097 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.417 </y-m>
+      <z-m>  0.237 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oilpsiL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.159 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oilpsiR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.150 </y-m>
+      <z-m>  0.159 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oiltempL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.243 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oiltempR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.150 </y-m>
+      <z-m>  0.243 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+
