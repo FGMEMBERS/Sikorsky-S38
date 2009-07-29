@@ -7,6 +7,12 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>panel</object-name>
+    <object-name>throttleL</object-name>
+    <object-name>throttleR</object-name>
+    <object-name>mixtureL</object-name>
+    <object-name>mixtureR</object-name>
+    <object-name>gearL</object-name>
+    <object-name>gearR</object-name>
 
     <!-- Objets transparents -->
   </animation>
@@ -109,6 +115,132 @@
       <z-m>  0.243 </z-m>
     </offsets>
   </model>
+   
+  <!-- Manette moteur 1 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleL</object-name>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 2 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleR</object-name>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 3 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>mixtureL</object-name>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 4 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>mixtureR</object-name>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 5 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>gearL</object-name>
+    <property>/gear/gear[0]/position-norm</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep> 90 </dep></entry>
+      <entry><ind>  1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 6 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>gearR</object-name>
+    <property>/gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep> 90 </dep></entry>
+      <entry><ind>  1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 
 </PropertyList>
 

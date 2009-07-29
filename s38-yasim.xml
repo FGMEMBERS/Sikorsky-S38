@@ -111,7 +111,7 @@
   -->
   <propeller x="2.977" y="1.588" z="0.546"
              mass="805"
-             moment="5"
+             moment="15"
              radius="1.5"
              cruise-speed="100"
              cruise-rpm="2200"
@@ -133,7 +133,7 @@
 
   <propeller x="2.977" y="-1.588" z="0.546"
              mass="805"
-             moment="5"
+             moment="15"
              radius="1.5"
              cruise-speed="100"
              cruise-rpm="2200"
