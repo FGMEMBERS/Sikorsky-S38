@@ -9,6 +9,10 @@
     <object-name>interieur</object-name>
     <object-name>inttour</object-name>
     <object-name>cloison</object-name>
+    <object-name>armature</object-name>
+    <object-name>echelle</object-name>
+    <object-name>canape</object-name>
+    <object-name>coussin</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
