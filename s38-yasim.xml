@@ -192,28 +192,28 @@
 
   <!-- Fuselage -->
   <!-- Avant -->
-  <!-- ignored-by-solver="1" -->
-  <gear x="5.982" y="0" z="-2.216"
-        compression="1.2"
-        spring="15"
+  <gear x="5.482" y="0" z="-2.496"
+        ignored-by-solver="0"
+        compression="0.25"  
+        spring="12"
         damp="8"
         sfric="0.4"
         dfric="0.3"
         on-water="1"
         on-solid="0"
-        reduce-friction-by-extension="1"
+        reduce-friction-by-extension="1.0"
         speed-planing="25"
         spring-factor-not-planing="0.2">
   </gear>
 
   <!-- Centre -->
-  <!-- ignored-by-solver="1" -->
-  <gear x="1.173" y="0" z="-2.384"
-        compression="2.4"
-        spring="6"
+  <gear x="1.173" y="0" z="-1.764"
+        ignored-by-solver="0"
+        compression="0.3"
+        spring="10"
         damp="8"
         sfric="0.4"
-        dfric="0.1"
+        dfric="0.1" 
         on-water="1"
         on-solid="0"
         reduce-friction-by-extension="1.1"
@@ -222,13 +222,13 @@
   </gear>
 
   <!-- Arrière -->
-  <!-- ignored-by-solver="1" -->
-  <gear x="-2.875" y="0" z="-1.694"
-        compression="1.1"
-        spring="3"
+  <gear x="-2.875" y="0" z="-1.584"
+        ignored-by-solver="1"
+        compression="0.25"
+        spring="8"
         damp="8"
         sfric="0.4"
-        dfric="0.2"
+        dfric="0.3" 
         on-water="1"
         on-solid="0"
         reduce-friction-by-extension="1.6"
@@ -237,9 +237,9 @@
   </gear>
 
   <!-- Flotteur gauche -->
-  <!-- ignored-by-solver="1" -->
-  <gear x="0.195" y="3.790" z="-1.744"
-        compression="0.3"
+  <gear x="0.195" y="3.790" z="-1.524"
+        ignored-by-solver="1"
+        compression="0.2"  
         spring="0.9"
         damp="10"
         sfric="0.8"
@@ -252,9 +252,9 @@
   </gear>
 
   <!-- Flotteur droit -->
-  <!-- ignored-by-solver="1" -->
-  <gear x="0.195" y="-3.790" z="-1.744"
-        compression="0.3"
+  <gear x="0.195" y="-3.790" z="-1.524"
+        ignored-by-solver="1"
+        compression="0.2"  
         spring="0.9"
         damp="10"
         sfric="0.8"
