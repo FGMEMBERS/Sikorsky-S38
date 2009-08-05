@@ -35,7 +35,6 @@
     <object-name>axeD4</object-name>
     <object-name>roueD</object-name>
     <object-name>structure</object-name>
-    <object-name>moteurs</object-name>
     <object-name>fuseaux</object-name>
     <object-name>echappes</object-name>
     <object-name>queues</object-name>
@@ -95,7 +94,6 @@
     <object-name>axeD4</object-name>
     <object-name>roueD</object-name>
     <object-name>structure</object-name>
-    <object-name>moteurs</object-name>
     <object-name>fuseaux</object-name>
     <object-name>echappes</object-name>
     <object-name>queues</object-name>
@@ -149,6 +147,27 @@
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>
       <z-m> 0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Les moteurs -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/r1340/r1340.xml</path>
+    <offsets>
+      <x-m> -3.002 </x-m>
+      <y-m> -1.588 </y-m>
+      <z-m>  0.536 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droit -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/r1340/r1340.xml</path>
+    <offsets>
+      <x-m> -3.002 </x-m>
+      <y-m>  1.588 </y-m>
+      <z-m>  0.536 </z-m>
     </offsets>
   </model>
 
