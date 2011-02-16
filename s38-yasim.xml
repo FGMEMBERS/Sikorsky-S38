@@ -7,7 +7,7 @@
      wingspan       : 21.85 m   (71 ft 8 in)
      length         : 12.27 m   (40 ft 3 in)
      height         :  4.22 m   (13 ft 10 in )
-     Moteurs        : 2× Pratt & Whitney R-1340 Wasp 9-cylinder air-cooled radial engines, 400 hp each
+     Moteurs        : 2 Pratt & Whitney R-1340 Wasp 9-cylinder air-cooled radial engines, 400 hp each
      Empty weight   :  2727 kg  (6000 lb)
      Max speed      :  192 km/h (104 kts)
 -->
@@ -221,7 +221,7 @@
         spring-factor-not-planing="0.3">
   </gear>
 
-  <!-- Arrière -->
+  <!-- Arriere -->
   <gear x="-2.875" y="0" z="-1.684"
         ignored-by-solver="1"
         compression="0.21"
@@ -269,7 +269,7 @@
   <tank x="1.03" y="2.5" z="1.4" capacity="1472"/>
   <tank x="1.03" y="-2.5" z="1.4" capacity="1472"/>
 
-  <!-- CG Théorique x=1.238 y=0 z=-1 -->
+  <!-- CG placement -->
   <ballast x="2" y="0" z="-2" mass="1000"/>
 
 </airplane>
