@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+
+************************************************************************
+-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+   
+    <fuel-fraction>1.0</fuel-fraction>
+  
+    <startup>
+      <splash-texture>Aircraft/Sikorsky-S38/s38-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Sikorsky-S38/Sounds/s38-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Sikorsky-S38/Models/s38.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model> 
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Sikorsky S38</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew door</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Open/Close door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/s38-menu.xml"/>
+
+  </sim>
+
+  <nasal>
+    <s38>
+      <file>Aircraft/Sikorsky-S38/Nasal/liveries.nas</file>
+      <file>Aircraft/Sikorsky-S38/Nasal/doors.nas</file>
+      <file>Aircraft/Sikorsky-S38/Nasal/light.nas</file>
+    </s38>
+  </nasal>
+
+</PropertyList>

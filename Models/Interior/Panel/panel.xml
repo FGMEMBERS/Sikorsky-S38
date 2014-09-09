@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>throttleL</object-name>
+    <object-name>throttleR</object-name>
+    <object-name>mixtureL</object-name>
+    <object-name>mixtureR</object-name>
+    <object-name>gearL</object-name>
+    <object-name>gearR</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.314 </y-m>
+      <z-m>  0.189 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.474 </y-m>
+      <z-m>  0.131 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/rpm/rpmL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.045 </y-m>
+      <z-m>  0.081 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/rpm/rpmR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m>  0.045 </y-m>
+      <z-m>  0.081 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.605 </y-m>
+      <z-m>  0.143 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> -0.514 </x-m>
+      <y-m> -0.712 </y-m>
+      <z-m>  0.097 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.417 </y-m>
+      <z-m>  0.237 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oilpsiL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.159 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oilpsiR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.150 </y-m>
+      <z-m>  0.159 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oiltempL.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.243 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Interior/Panel/Instruments/oil/oiltempR.xml</path>
+    <offsets>
+      <x-m> -0.515 </x-m>
+      <y-m> -0.150 </y-m>
+      <z-m>  0.243 </z-m>
+    </offsets>
+  </model>
+   
+  <!-- Manette moteur 1 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleL</object-name>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 2 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleR</object-name>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 3 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>mixtureL</object-name>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 4 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>mixtureR</object-name>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 5 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>gearL</object-name>
+    <property>/gear/gear[0]/position-norm</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep> 90 </dep></entry>
+      <entry><ind>  1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Manette moteur 6 -->
+  <animation>
+    <type>rotate</type>
+    <object-name>gearR</object-name>
+    <property>/gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep> 90 </dep></entry>
+      <entry><ind>  1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.153 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.212 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
