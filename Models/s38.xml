@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -45,8 +45,9 @@
     <object-name>bolD</object-name>
     <object-name>patte</object-name>
     <object-name>flotteurs</object-name>
-    <object-name>caches</object-name>
+    <object-name>cachesmoteur</object-name>
 
+    <object-name>trous</object-name>
     <object-name>axeG</object-name>
     <object-name>axeG2</object-name>
     <object-name>axeG3</object-name>
@@ -60,8 +61,8 @@
     <object-name>echappes</object-name>
     <object-name>heliceG</object-name>
     <object-name>heliceD</object-name>
-    <object-name>trous</object-name>
-
+    <object-name>cables</object-name>
+    
     <!-- Transparence -->
     <object-name>vitres</object-name>
     <object-name>propdiscG</object-name>
@@ -89,8 +90,9 @@
     <object-name>bolD</object-name>
     <object-name>patte</object-name>
     <object-name>flotteurs</object-name>
-    <object-name>caches</object-name>
+    <object-name>cachesmoteur</object-name>
 
+    <object-name>trous</object-name>
     <object-name>axeG</object-name>
     <object-name>axeG2</object-name>
     <object-name>axeG3</object-name>
@@ -104,40 +106,16 @@
     <object-name>echappes</object-name>
     <object-name>heliceG</object-name>
     <object-name>heliceD</object-name>
-    <object-name>trous</object-name>
-
+    <object-name>cables</object-name>
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -159,45 +137,52 @@
     <object-name>bolD</object-name>
     <object-name>patte</object-name>
     <object-name>flotteurs</object-name>
-    <object-name>caches</object-name>
+    <object-name>cachesmoteur</object-name>
   </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Sikorsky-S38/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>propdiscG</object-name>
     <object-name>propblurG</object-name>
     <object-name>propdiscD</object-name>
     <object-name>propblurD</object-name>
-  </animation>
+  </effect>
 
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Sikorsky-S38/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -2 </z-m>
+    </offsets>
   </model>
 
   <!-- Intérieur -->
   <model>
+    <usage>interior</usage>
     <path>Aircraft/Sikorsky-S38/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Les moteurs -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Sikorsky-S38/Models/r1340/r1340.xml</path>
+    <path>Aircraft/Sikorsky-S38/Models/engines/engine.xml</path>
     <offsets>
       <x-m> -3.002 </x-m>
       <y-m> -1.588 </y-m>
@@ -207,7 +192,7 @@
 
   <!-- Droit -->
   <model>
-    <path>Aircraft/Sikorsky-S38/Models/r1340/r1340.xml</path>
+    <path>Aircraft/Sikorsky-S38/Models/engines/engine.xml</path>
     <offsets>
       <x-m> -3.002 </x-m>
       <y-m>  1.588 </y-m>
@@ -215,45 +200,93 @@
     </offsets>
   </model>
 
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/cranking/crankingL.xml</path>
+    <offsets>
+      <x-m> -2.27528 </x-m>
+      <y-m> -1.94707 </y-m>
+      <z-m>  0.26797 </z-m>
+      <pitch-deg> 5 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- Right -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/cranking/crankingR.xml</path>
+    <offsets>
+      <x-m> -2.27528 </x-m>
+      <y-m>  1.94707 </y-m>
+      <z-m>  0.26797 </z-m>
+      <pitch-deg> 5 </pitch-deg>
+    </offsets>
+  </model>
+  
   <!-- Trainée Centrale -->
   <model>
-    <path>Aircraft/Sikorsky-S38/Models/Effects/wake.xml</path>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/wakes/wake.xml</path>
     <offsets>
       <x-m>  2.875 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -1.786 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <pitch-deg> -5 </pitch-deg>
     </offsets>
   </model>
 
   <!-- Trainée flotteur gauche -->
   <model>
-    <path>Aircraft/Sikorsky-S38/Models/Effects/wakeG.xml</path>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/wakes/wakeG.xml</path>
     <offsets>
       <x-m> -0.195 </x-m>
       <y-m> -3.790 </y-m>
       <z-m> -1.644 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <pitch-deg> -5 </pitch-deg>
     </offsets>
   </model>
 
   <!-- Trainée flotteur droite -->
   <model>
-    <path>Aircraft/Sikorsky-S38/Models/Effects/wakeD.xml</path>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/wakes/wakeD.xml</path>
     <offsets>
       <x-m> -0.195 </x-m>
       <y-m>  3.790 </y-m>
       <z-m> -1.644 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <pitch-deg> -5 </pitch-deg>
     </offsets>
   </model>
 
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -1.874 </x-m>
+      <y-m> -1.455 </y-m>
+      <z-m> -2.582 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -1.874 </x-m>
+      <y-m>  1.455 </y-m>
+      <z-m> -2.582 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Patte de queue -->
+  <model>
+    <path>Aircraft/Sikorsky-S38/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  2.790 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.820 </z-m>
+    </offsets>
+  </model>
+  
   <!-- Les hélices --> 
   <animation>
     <name>HeliceGauche</name>
@@ -306,7 +339,7 @@
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
@@ -314,6 +347,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceGauche</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> -1 </factor>
     <center>
@@ -363,7 +402,7 @@
     <condition>
       <less-than>
         <property>engines/engine[1]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
@@ -371,6 +410,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceDroite</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[1]/rpm</property>
     <factor> -1 </factor>
     <center>
@@ -529,7 +574,7 @@
     <object-name>axeG4</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -70 </dep></entry>
+      <entry><ind> 0 </ind><dep> -90 </dep></entry>
       <entry><ind> 1 </ind><dep>   0 </dep></entry>
     </interpolation>
     <center>
@@ -599,7 +644,7 @@
     <object-name>axeD4</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 70 </dep></entry>
+      <entry><ind> 0 </ind><dep> 90 </dep></entry>
       <entry><ind> 1 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
@@ -614,211 +659,93 @@
     </axis>
   </animation>
 
-<!--
+  <!-- Compression -->
   <animation>
-    <name>RoueDroite</name>
-    <object-name>axeD</object-name>
-    <object-name>roueD</object-name>
+    <name>EnsembleGauche</name>
+    <object-name>axeG</object-name>
+    <object-name>axeG2</object-name>
+    <object-name>axeG3</object-name>
+    <object-name>roueG</object-name>
   </animation>
-
-  <animation>
-    <name>AxeDroit</name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>RoueDroite</object-name>
-    <property>gear/gear[1]/position-norm</property>
-    <interpolation>
-      <entry><ind> 0.0 </ind><dep> 50 </dep></entry>
-      <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -3.036 </x-m>
-      <y-m>  0.982 </y-m>
-      <z-m> -1.034 </z-m>
-    </center>
-    <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
+  
   <animation>
     <type>translate</type>
-    <object-name>axeDB</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <object-name>EnsembleGauche</object-name>
+    <property>gear/gear[0]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 0.52 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
     </interpolation>
-    <axis>
-      <x>  0.000000 </x>
-      <y> -0.352671 </y>
-      <z>  0.966170 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>AxeDroit</object-name>
-    <property>gear/gear[0]/position-norm</property>
-    <interpolation>
-      <entry><ind> 0.0 </ind><dep> 20 </dep></entry>
-      <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.556 </x-m>
-      <y-m>  1.039 </y-m>
-      <z-m>  0.223 </z-m>
-    </center>
-    <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>roueA</object-name>
-    <property>gear/gear[2]/position-norm</property>
-    <interpolation>
-      <entry><ind> 0.0 </ind><dep> -50 </dep></entry>
-      <entry><ind> 1.0 </ind><dep>   0 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m>  2.420 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.890 </z-m>
-    </center>
     <axis>
       <x> 0 </x>
-      <y> 1 </y>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>axeG4</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 20 </dep></entry>
+      <entry><ind> 1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -1.877 </x-m>
+      <y-m> -0.912 </y-m>
+      <z-m> -1.722 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
       <z> 0 </z>
     </axis>
-  </animation> -->
-
-  <!-- Compression 
-  <animation>
-    <type>rotate</type>
-    <object-name>RoueGauche</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep>  5 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -5 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -3.036 </x-m>
-      <y-m> -0.982 </y-m>
-      <z-m> -1.034 </z-m>
-    </center>
-    <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
   </animation>
- 
+  
   <animation>
-    <type>rotate</type>
-    <object-name>AxeGauche</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep>  2 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -2 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.556 </x-m>
-      <y-m> -1.039 </y-m>
-      <z-m>  0.223 </z-m>
-    </center>
-    <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
+    <name>EnsembleDroite</name>
+    <object-name>axeD</object-name>
+    <object-name>axeD2</object-name>
+    <object-name>axeD3</object-name>
+    <object-name>roueD</object-name>
   </animation>
-
+  
   <animation>
     <type>translate</type>
-    <object-name>axeGB</object-name>
-    <property>gear/gear[0]/compression-norm</property>
+    <object-name>EnsembleDroite</object-name>
+    <property>gear/gear[1]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.15 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.000000 </x>
-      <y> 0.352671 </y>
-      <z> 0.966170 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
-    <object-name>RoueDroite</object-name>
+    <object-name>axeD4</object-name>
     <property>gear/gear[1]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> -5 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  5 </dep></entry>
+      <entry><ind> 0 </ind><dep> -20 </dep></entry>
+      <entry><ind> 1 </ind><dep>   0 </dep></entry>
     </interpolation>
     <center>
-      <x-m> -3.036 </x-m>
-      <y-m>  0.982 </y-m>
-      <z-m> -1.034 </z-m>
+      <x-m> -1.877 </x-m>
+      <y-m>  0.912 </y-m>
+      <z-m> -1.722 </z-m>
     </center>
     <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
- 
-  <animation>
-    <type>rotate</type>
-    <object-name>AxeDroit</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> -2 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  2 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.556 </x-m>
-      <y-m>  1.039 </y-m>
-      <z-m>  0.223 </z-m>
-    </center>
-    <axis>
-      <x>  1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>axeDB</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
-      <entry><ind> 0.60 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.15 </dep></entry>
-    </interpolation>
-    <axis>
-      <x>  0.000000 </x>
-      <y> -0.352671 </y>
-      <z>  0.966170 </z>
-    </axis>
-  </animation> -->
-
+  
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>
