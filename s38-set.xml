@@ -6,7 +6,7 @@
     
     <description>Sikorsky S38 (YASim)</description>
     <author>BARANGER Emmanuel (3D/FDM)</author>
-    
+    <type type="string">amphibious</type>        
     <flight-model>yasim</flight-model>
     <aero>s38-yasim</aero>
     

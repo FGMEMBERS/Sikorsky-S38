@@ -14,8 +14,45 @@
     <object-name>souflets</object-name>
     <object-name>anneau</object-name>
     <object-name>bougies</object-name>
-    
   </animation>
 
-</PropertyList>
+  <animation>
+    <type>material</type>
+    <object-name>pistons</object-name>
+    <object-name>caches</object-name>
+    <object-name>cylindres</object-name>
+    <object-name>ecrous</object-name>
+    <object-name>cames</object-name>
+    <object-name>souflets</object-name>
+    <object-name>anneau</object-name>
+    <object-name>bougies</object-name>
+     <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>r1340.png</texture>
 
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>    
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>pistons</object-name>
+    <object-name>caches</object-name>
+    <object-name>cylindres</object-name>
+    <object-name>ecrous</object-name>
+    <object-name>cames</object-name>
+    <object-name>souflets</object-name>
+    <object-name>anneau</object-name>
+    <object-name>bougies</object-name>
+  </effect>
+  
+</PropertyList>
